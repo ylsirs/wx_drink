@@ -1,0 +1,392 @@
+page {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+}
+
+/* 轮播图 */
+.swiper {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 200px;
+}
+
+.swiper swipe-item {
+  height: 100%;
+}
+
+.swiperPhoto {
+  width: 100%;
+  height: 100%;
+}
+
+/* 通知栏 */
+.notice {
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.notice .img {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+.notice .img image {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.notice .text {
+  flex: 1;
+}
+
+.notice .icon-box-img {
+  width: 35px;
+}
+
+
+/* 搜索栏 */
+.search {
+  border: 1px solid #DCDCDC;
+  border-radius: 15px;
+  height: 30px;
+  width: 150px;
+  margin-left: 50px;
+  padding-left: 35px;
+  font-size: 14px;
+}
+
+.searchImg {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 60px;
+}
+
+/* 商品栏 */
+.content {
+  height: 100%;
+  margin-top: 5px;
+  display: flex;
+}
+
+
+/* 商品分类列表 */
+.content .goodsClassList {
+  background-color: #f0f0f0;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.content .goodsClassList .goodsClass {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+/* 选中状态样式 */
+.goodsClassActive {
+  background-color: #fff;
+  border-left: rgb(10, 175, 235) 5px solid;
+}
+
+.content .goodsClassList .icon image {
+  width: 30px;
+  height: 30px;
+}
+
+/* 商品列表 */
+.content .goodsList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSpace {
+  /* 底部商品列表留白 */
+  height: 400px;
+}
+
+.leftSpace {
+  /* 底部商品列表留白 */
+  height: 100px;
+}
+
+.content .goodsList .goodsClassName {
+  margin: 20px 10px;
+  background-color: #FFF6EE;
+  color: #A6946C;
+  display: inline-block;
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.content .goodsList .goods {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #ffff;
+  overflow: hidden;
+}
+
+.content .goodsList .goods .img image {
+  width: 120px;
+  height: 150px;
+}
+
+.content .goodsList .goods .goodsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .goodsList .goods .goodsContent .name {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 5px 10px 0 0;
+  font-weight: bold;
+}
+
+.content .goodsList .goods .goodsContent .describe {
+  font-size: 14px;
+  font-family: "楷体", "楷体_GB2312";
+  text-overflow: ellipsis;
+}
+
+.content .goodsList .goods .goodsContent .num {
+  position: relative;
+  margin: 0 0 5px 5px;
+}
+
+.content .goodsList .goods .goodsContent .num .price {
+  font-size: 20px;
+}
+
+.content .goodsList .goods .goodsContent .num .shop {
+  position: absolute;
+  right: 10px;
+  bottom: -5px;
+  font-size: 30px;
+}
+
+/* 底部购物车 */
+.shoppingCart {
+  position: fixed;
+  bottom: 10px;
+  width: 80%;
+  left: 10%;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  border: #f0f0f0 0.5px solid;
+}
+
+.shoppingCart image {
+  width: 40px;
+  height: 60px;
+  position: absolute;
+  top: -25px;
+  left: 35px;
+}
+
+.shoppingCart .cartNum {
+  position: absolute;
+  top: -35px;
+  left: 60px;
+  background-color: #ff8300;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 25px;
+  text-align: center;
+}
+
+.shoppingCart .cartLeft {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding-left: 80px;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.shoppingCart .cartRight {
+  width: 30%;
+  height: 100%;
+  background-color: #787878;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  font-family: "楷体", "楷体_GB2312";
+}
+
+.shoppingCart .cartRightActive {
+  background-color: #ff8300 !important;
+  color: #fff;
+}
+
+/* 添加商品弹出框 */
+.addCart {
+  padding: 15px 20px;
+}
+
+.addCart_title {
+  display: flex;
+}
+
+.addCart_title image {
+  width: 120px;
+  height: 150px;
+}
+
+.addCart_title .cartClose {
+  width: 25px;
+  color: black;
+}
+
+.addCart_title_content {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.addCart_title_content view {
+  margin-bottom: 20px;
+}
+
+.addCart_title_content_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.addCart_title_content_detail {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.addCart_title_content_price {
+  font-size: 25px;
+  color: red;
+  margin-top: 50px;
+}
+
+.addCart_content view button {
+  font-size: 13px;
+  font-weight: initial;
+  margin: 15px 10px 15px 0;
+}
+
+.btnActive {
+  background-color: pink;
+}
+
+.currentMain {
+  background-color: pink;
+}
+
+
+/* 购物车商品列表 */
+.cart_goods_cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.cart_goods {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  min-height: 150px;
+  z-index: 20;
+  border-radius: 15px 15px 0 0;
+  padding-bottom: 90px;
+}
+
+.cart_goods_title {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.cart_goods_title text {
+  line-height: 50px;
+}
+
+.cart_goods_title image {
+  width: 20px;
+  height: 20px;
+  vertical-align: sub;
+}
+
+.cart_goods_list {
+  padding: 0 30px;
+}
+
+.cart_goods_list_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart_goods_list_list .cart_goods_list_list_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart_goods_list_list_content text:nth-child(2) {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.cart_goods_list_list_content text:nth-child(3) {
+  margin-top: 10px;
+  color: red;
+}
+
+.cart_goods_list_list_num {
+  position: relative;
+  font-size: 30px;
+}
+.cart_goods_list_list_num text {
+  position: absolute;
+}
+.cart_goods_list_list_num text:nth-child(1) {
+  left: -70px;
+  top: 14px;
+}
+.cart_goods_list_list_num text:nth-child(2) {
+  font-size: 18px;
+  left: -40px;
+  color: red;
+  top: 24px;
+}
+.cart_goods_list_list_num text:nth-child(3) {
+  left: -20px;
+  top: 15px;
+}

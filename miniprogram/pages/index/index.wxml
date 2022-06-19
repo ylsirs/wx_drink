@@ -1,0 +1,156 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 首页轮播图 -->
+  <swiper wx:if="{{!isSearch}}" class="swiper" indicator-dots autoplay circular interval="5000" duration="500">
+    <block wx:for="{{myList}}" wx:key="_id">
+      <swiper-item>
+        <image class="swiperPhoto" src="{{item.photo}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 公告 -->
+  <view wx:if="{{!isSearch}}" class="notice">
+    <view class="img">
+      <image src="../../images/notice.png" />
+    </view>
+    <view class="text">
+      <block wx:for="{{noticeList}}" wx:key="_id">
+        <text>{{item.text}}</text>
+      </block>
+    </view>
+    <icon class="icon-box-img" type="info" size="25"></icon>
+  </view>
+  <!-- 搜索栏 -->
+  <view wx:if="{{isSearch}}">
+    <image src="../../images/serach.png" class="searchImg" style="top:{{menuTop + menuHeight/2-10}}px" />
+    <input type="text" placeholder="搜索商品" class="search" style="margin-top:{{menuTop}}px" />
+  </view>
+  <!-- 菜单 -->
+  <view class="content">
+    <!-- 商品分类 左侧 -->
+    <view class="goodsClassList">
+      <scroll-view style="height: {{goodsScrollHeight + 35}}px;" scroll-y="true">
+        <view class="{{index === leftNum? 'goodsClassActive' : ''}} goodsClass" wx:for="{{goodsClassList}}" wx:key="_id" bindtap="onLeftChange" data-index="{{index}}">
+          <view class="icon">
+            <image src="../../images/notice.png" />
+          </view>
+          <view class="text">{{item.goodsClassName}}</view>
+        </view>
+        <view class="leftSpace"></view>
+      </scroll-view>
+    </view>
+    <!-- 商品列表 右侧 -->
+    <view class="goodsList">
+      <scroll-view style="height: {{goodsScrollHeight}}px;" scroll-into-view="{{rightId}}" scroll-with-animation="true" scroll-y="true" bindscroll="goodsListScroll">
+        <view wx:for="{{goodsList}}" wx:key="name" class="goodsAll" id="{{'right' + index}}">
+          <text class="goodsClassName">{{item.name}}</text>
+          <view class="goods" wx:for="{{item.list}}" wx:for-item="goodsItem" wx:key="_id">
+            <view class="img">
+              <image src="{{goodsItem.photo}}" />
+            </view>
+            <view class="goodsContent">
+              <view class="name">
+                <text>{{goodsItem.name}}</text>
+              </view>
+              <text class="describe">{{goodsItem.goodsDescribe}}</text>
+              <view class="num">
+                <text class="price">￥{{goodsItem.price[0]}}</text>
+                <text class="shop" bindtap="addShopping" data-id="{{goodsItem}}">+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="rightSpace"></view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 购物车 -->
+  <view class="shoppingCart" style="z-index:{{z_index}}">
+    <block wx:if="{{cartGoodsList.length === 0}}">
+      <image src="../../images/cartIcon.jpg" />
+      <view class="cartLeft">￥0.0</view>
+      <view class="cartRight">去结算</view>
+    </block>
+    <block wx:else>
+      <image src="../../images/cartIcon1.jpg" bindtap="cartGoodsListBtn" />
+      <view class="cartNum">{{cartGoodsListNum}}</view>
+      <view class="cartLeft">￥{{cartTotalPrice}}</view>
+      <view class="cartRight cartRightActive">去结算</view>
+    </block>
+  </view>
+  <!-- 添加商品弹出层 -->
+  <page-container show="{{cartShow}}" overlay="{{true}}" position="bottom" duration="500" bind:enter bind:afterleave="cartAfterleave">
+    <view class="addCart">
+      <view class="addCart_title">
+        <view>
+          <image src="{{cartGoods.photo}}" />
+        </view>
+        <view class="addCart_title_content">
+          <view class="addCart_title_content_name">{{cartGoods.name}}</view>
+          <view class="addCart_title_content_detail">
+            {{cartGoodsDetail.size+ '杯' + '/' + cartGoodsDetail.temperature + '/' + cartGoodsDetail.sweet}}
+          </view>
+          <view class="addCart_title_content_price">￥{{cartPirce}}</view>
+        </view>
+        <icon type="cancel" color="#A0A0A0" lass="cartClose" bindtap="cartCloseBtn" />
+      </view>
+      <view class="addCart_content">
+        <view class="addCart_content_size">
+          <text>杯型</text>
+          <view>
+            <button class="{{index == cartSizeIndex? 'btnActive': ''}}" bindtap="cartSizeBtn" data-sizeindex="{{index}}" size="mini" wx:for="{{cartGoods.size}}" wx:key="index">
+              {{item}}杯
+            </button>
+          </view>
+        </view>
+        <view class="addCart_content_temperature">
+          <text>冰度</text>
+          <view>
+            <button class="{{index == cartTemperatureIndex? 'btnActive': ''}}" bindtap="cartTemperatureBtn" data-temperatureindex="{{index}}" size="mini" wx:for="{{cartGoods.temperature}}" wx:key="index">
+              {{item}}
+            </button>
+          </view>
+        </view>
+        <view class="addCart_content_sweet">
+          <text>糖度</text>
+          <view>
+            <button class="{{index == cartSweetIndex? 'btnActive': ''}}" bindtap="cartSweetBtn" data-sweetindex="{{index}}" size="mini" wx:for="{{cartGoods.sweet}}" wx:key="index">
+              {{item}}
+            </button>
+          </view>
+        </view>
+      </view>
+      <view class="addCart_foot">
+        <button type="primary" bindtap="addCartGoods">加入购物车</button>
+      </view>
+    </view>
+  </page-container>
+  <!-- 已添加商品购物列表 -->
+  <!-- 遮蔽层 -->
+  <view class="cart_goods_cover" wx:if="{{cartFlag}}" bindtap="cartCover"></view>
+  <view class="cart_goods" wx:if="{{cartFlag}}">
+    <view class="cart_goods_title">
+      <text>已选商品</text>
+      <view bindtap="cartClear">
+        <image src="../../images/delete.png" />
+        <text>清空</text>
+      </view>
+    </view>
+    <view class="cart_goods_list">
+      <scroll-view scroll-y="true" style="height: {{cartGoodsListScroll}}px">
+        <view wx:for="{{cartGoodsList}}" wx:key="index" class="cart_goods_list_list">
+          <view class="cart_goods_list_list_content">
+            <text>{{ item.name + '/' + item.detail.size + '杯'}}</text>
+            <text>{{ item.detail.sweet + '/' +  item.detail.temperature}}</text>
+            <text>￥{{item.price}}</text>
+          </view>
+          <view class="cart_goods_list_list_num">
+            <text bindtap="cartGoodsListNumtDelete" data-item="{{item}}" data-index="{{index}}">-</text>
+            <text>{{item.goodsNum}}</text>
+            <text bindtap="cartGoodsListNumAdd" data-item="{{item}}" data-index="{{index}}">+</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
