@@ -51,6 +51,13 @@
                     "pathName": "pages/updateRecordSuccess/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/accounts/accounts",
+                    "query": "cartList=%5B%7B%22name%22%3A%22%E6%9D%A8%E6%9E%9D%E7%94%98%E9%9C%B2%22%2C%22price%22%3A%2212%22%2C%22goodsNum%22%3A1%2C%22detail%22%3A%7B%22size%22%3A%22%E4%B8%AD%22%2C%22sweet%22%3A%22%E5%BE%AE%E7%B3%96%22%2C%22temperature%22%3A%22%E5%86%B0%22%7D%7D%5D",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

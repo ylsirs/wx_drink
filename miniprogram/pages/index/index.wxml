@@ -1,6 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
   <!-- 首页轮播图 -->
+  <!-- 点击图片弹出对应的添加商品弹出层   待添加功能 -->
   <swiper wx:if="{{!isSearch}}" class="swiper" indicator-dots autoplay circular interval="5000" duration="500">
     <block wx:for="{{myList}}" wx:key="_id">
       <swiper-item>
@@ -23,7 +24,7 @@
   <!-- 搜索栏 -->
   <view wx:if="{{isSearch}}">
     <image src="../../images/serach.png" class="searchImg" style="top:{{menuTop + menuHeight/2-10}}px" />
-    <input type="text" placeholder="搜索商品" class="search" style="margin-top:{{menuTop}}px" />
+    <input type="text" placeholder="搜索商品" class="search" style="margin-top:{{menuTop}}px" bindtap="goSearch"/>
   </view>
   <!-- 菜单 -->
   <view class="content">
@@ -75,7 +76,7 @@
       <image src="../../images/cartIcon1.jpg" bindtap="cartGoodsListBtn" />
       <view class="cartNum">{{cartGoodsListNum}}</view>
       <view class="cartLeft">￥{{cartTotalPrice}}</view>
-      <view class="cartRight cartRightActive">去结算</view>
+      <view class="cartRight cartRightActive" bind:tap="goAccounts">去结算</view>
     </block>
   </view>
   <!-- 添加商品弹出层 -->

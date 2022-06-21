@@ -1,0 +1,40 @@
+<view class="accounts">
+  <!-- {{cartGoodsList[0].name}} -->
+  <!-- 订单详情 -->
+  <view class="order">
+    <view class="order_title">
+      <text>订单详情</text>
+    </view>
+    <view class="order_list">
+      <view class="order_list_goods" wx:for="{{cartGoodsList}}">
+        <view class="order_list_goods_name">
+          <view>{{item.name + '/' + item.detail.size + '杯'}}</view>
+          <view>{{item.detail.sweet + '/' + item.detail.temperature}}</view>
+        </view >
+        <view class="order_list_goods_num">×{{item.goodsNum}}</view>
+        <view class="order_list_goods_price">￥{{item.price}}</view>
+      </view>
+      <view class="order_list_total">
+        <view class="order_list_total_price">共计￥{{cartTotalPrice}}</view>
+        <view class="order_list_total_num"> 共{{cartTotalNum}}件 </view>
+      </view>
+    </view>
+  </view>
+  <!-- 客户备注 -->
+  <view class="order_notes">
+    <view class="order_notes_img">
+      <image src="../../images/notes.png" /> 备注
+    </view>
+    <view class="order_notes_input"> 
+      <input type="text" bindinput="notesValueLength" 	bindconfirm="notesConfirm" maxlength="{{30}}" placeholder="若有其他要求，请备注说明" />
+      <text>{{notesValueLength}}/30个字</text>
+    </view>
+  
+  </view>
+  <!-- 购物车 -->
+  <view class="shoppingCart">
+    <view class="cartLeft">￥{{cartTotalPrice}}</view>
+    <view class="cartRight" bind:tap="goAccounts">下 单</view>
+  </view>
+  <view style="height: {{100}}px"></view>
+</view>

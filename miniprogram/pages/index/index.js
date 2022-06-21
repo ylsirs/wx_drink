@@ -128,6 +128,12 @@ Page({
     }, 500);
   },
 
+  // 搜索框跳转事件
+  goSearch (e) {
+    console.log(e);
+  },
+
+
   // 左侧点击事件
   onLeftChange (e) {
     this.setData({
@@ -158,7 +164,7 @@ Page({
     }
     // console.log(heightArr);
     // console.log(e.detail.scrollTop);
-    if(e.detail.scrollTop <= 50){
+    if (e.detail.scrollTop <= 30) {
       this.setData({
         // 隐藏搜索框  显示轮播和公告
         isSearch: !this.data.isSearch,
@@ -236,10 +242,10 @@ Page({
     obj.goodsNum = 1
     obj.detail = this.data.cartGoodsDetail
     // obj._id = 
-    console.log(this.data);
+    // console.log(this.data);
 
     this.data.cartGoodsList.push(obj)
-    console.log(this.data.cartGoodsList);
+    // console.log(this.data.cartGoodsList);
     // console.log(this.data.cartGoodsDetail);
     this.setData({
       cartGoodsList: this.data.cartGoodsList,
@@ -279,7 +285,7 @@ Page({
         })
       }
     }).exec()
-    this.totalPrice()
+    // this.totalPrice()
   },
 
   // 清空购物车按钮
@@ -306,6 +312,13 @@ Page({
       cartGoodsList: this.data.cartGoodsList
     })
     this.totalPrice()
+    wx.createSelectorQuery().select('.cart_goods').boundingClientRect(res => {
+      if (res.height <= 490) {
+        this.setData({
+          cartGoodsListScroll: ''
+        })
+      }
+    }).exec()
   },
 
   cartGoodsListNumAdd (e) {
@@ -316,6 +329,15 @@ Page({
     })
     this.totalPrice()
   },
+
+  goAccounts(){
+    console.log(this.data.cartGoodsList);
+    let cart = JSON.stringify(this.data.cartGoodsList)
+    wx.navigateTo({
+      url: `../accounts/accounts?cartList=${cart}`,
+    })
+  },
+
   // 购物车 总价/数量 计算 封装
   totalPrice () {
     // console.log(this.data.cartGoodsList);

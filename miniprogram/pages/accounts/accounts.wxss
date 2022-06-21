@@ -1,0 +1,138 @@
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.accounts {
+  padding: 10px 10px 0 10px;
+  margin-bottom: 50px;
+}
+
+
+/* 订单详情 */
+.order {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.order_title {
+  font-size: 18px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order_list {
+  margin-top: 10px;
+}
+
+.order_list_goods {
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.order_list_goods_name {
+  flex: 1;
+}
+
+.order_list_goods_name view:nth-child(2) {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.order_list_goods_num {
+  font-size: 16px;
+  color: #919191;
+  width: 20px;
+}
+
+.order_list_goods_price {
+  color: red;
+  font-size: 16px;
+  width: 50px;
+  margin-left: 50px;
+}
+
+/* 订单总计 */
+.order_list_total {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.order_list_total_num {
+  font-size: 13px;
+  font-weight: lighter;
+  margin-right: 30px;
+}
+
+.order_list_total_price {
+  color: red;
+}
+
+/* 备注 */
+.order_notes{
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.order_notes_img image{
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
+}
+.order_notes_input{
+  border: 1px solid #f0f0f0;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 12px;
+}
+.order_notes_input text {
+  float: right;
+  margin-right: 10px;
+  color: #919191;
+  font-size: 12px;
+}
+
+/* 底部购物车 */
+.shoppingCart {
+  position: fixed;
+  bottom: 10px;
+  width: 90%;
+  left: 5%;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  border: #f0f0f0 0.5px solid;
+}
+
+.shoppingCart .cartLeft {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding-left: 40px;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.shoppingCart .cartRight {
+  width: 30%;
+  height: 100%;
+  background-color: #ff8300;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  font-family: "楷体", "楷体_GB2312";
+  color: #fff;
+}
