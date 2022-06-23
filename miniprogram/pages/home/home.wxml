@@ -1,0 +1,3 @@
+<view>
+  <button type="primary" size="">扫码点餐</button>
+</view>

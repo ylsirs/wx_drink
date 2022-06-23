@@ -24,7 +24,7 @@
   <!-- 搜索栏 -->
   <view wx:if="{{isSearch}}">
     <image src="../../images/serach.png" class="searchImg" style="top:{{menuTop + menuHeight/2-10}}px" />
-    <input type="text" placeholder="搜索商品" class="search" style="margin-top:{{menuTop}}px" bindtap="goSearch"/>
+    <input type="text" placeholder="搜索商品" class="search" style="margin-top:{{menuTop}}px" bindtap="goSearch" />
   </view>
   <!-- 菜单 -->
   <view class="content">
@@ -146,7 +146,9 @@
             <text>￥{{item.price}}</text>
           </view>
           <view class="cart_goods_list_list_num">
-            <text bindtap="cartGoodsListNumtDelete" data-item="{{item}}" data-index="{{index}}">-</text>
+            <text bindtap="cartGoodsListNumtDelete" data-item="{{item}}" data-index="{{index}}">
+              -
+            </text>
             <text>{{item.goodsNum}}</text>
             <text bindtap="cartGoodsListNumAdd" data-item="{{item}}" data-index="{{index}}">+</text>
           </view>

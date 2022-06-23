@@ -14,6 +14,7 @@ App({
     // console.log(menuButtonInfo);
     wx.getSystemInfo({
       success: (res) => {
+        // console.log(res);
         this.globalData.winWidth = res.screenWidth;
         this.globalData.winHeight = res.screenHeight;
         // console.log(res.statusBarHeight);
@@ -30,6 +31,6 @@ App({
     winHeight: '',
     navBarHeight: '',
     menuTop: '',
-    menuHeight: ''
+    menuHeight: '',
   }
 });

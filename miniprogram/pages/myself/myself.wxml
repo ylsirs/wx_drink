@@ -1,0 +1,30 @@
+<view class="contain">
+  <view class="b_g_c_img">
+    <image src="cloud://project-one-8g7drnus4e063df3.7072-project-one-8g7drnus4e063df3-1312277976/cloudbase-cms/upload/2022-06-04/qaxbhw60f5spm466w1a2zeiy4267sf7o_.webp" />
+  </view>
+  <view class="user_info_list_view">
+    <view class="user_info_list">
+      <!-- 登录 -->
+      <view class="user_login">
+        <block wx:if="{{!hasUserInfo}}">
+          <view class="user_login_picture" bind:tap="userLogin">
+            <image src="../../images/user.png" />
+          </view>
+          <text>登录/注册</text>
+        </block>
+        <block wx:if="{{hasUserInfo}}">
+          <view class="user_login_picture login_success">
+            <image src="{{userInfo.avatarUrl}}" />
+          </view>
+          <text>{{userInfo.nickName}}</text>
+        </block>
+      </view>
+      <!-- 个人资料 -->
+      <view class="user_info">
+        <view>个人资料</view>
+        <view>我的留言</view>
+        <view wx:if="{{hasUserInfo}}" bind:tap="loginOut">退出登录</view>
+      </view>
+    </view>
+  </view>
+</view>
