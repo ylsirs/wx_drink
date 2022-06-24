@@ -2,21 +2,16 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-    env: "project-one-8g7drnus4e063df3"
+    env: cloud.DYNAMIC_CURRENT_ENV
 })
 
 // 云函数入口函数
 exports.main = async (event) => {
     const wxContext = cloud.getWXContext()
-    const {
-        nickName,
-        avatarUrl
-    } = event
+    const { nickName, avatarUrl } = event
     const db = cloud.database()
     const userInfo = db.collection('userInfo')
-    const {
-        data
-    } = await userInfo.where({
+    const { data } = await userInfo.where({
         _openid: wxContext.OPENID
     }).get()
 

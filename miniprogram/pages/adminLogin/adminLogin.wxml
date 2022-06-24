@@ -1,0 +1,16 @@
+<view class="container">
+  <form bindsubmit="adminLogin">
+    <view class="Login">
+      <text class="Login_title">后台管理登录</text>
+      <view class="Login_login">
+        <text>账号：</text>
+        <input type="text" placeholder="请输入账号" name="name" value="admin"/>
+      </view>
+      <view class="Login_login">
+        <text>密码：</text>
+        <input type="password" placeholder="请输入密码" name="password" value="123456"/>
+      </view>
+      <button class="Login_btn" type="primary" size="mini" form-type="submit">登录</button>
+    </view>
+  </form>
+</view>

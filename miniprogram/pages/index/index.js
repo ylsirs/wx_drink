@@ -330,9 +330,12 @@ Page({
     this.totalPrice()
   },
 
-  goAccounts(){
+  goAccounts () {
     console.log(this.data.cartGoodsList);
     let cart = JSON.stringify(this.data.cartGoodsList)
+    // this.setData({
+    //   cartGoodsList: []
+    // })
     wx.navigateTo({
       url: `../accounts/accounts?cartList=${cart}`,
     })

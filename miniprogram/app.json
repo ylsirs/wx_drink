@@ -1,45 +1,47 @@
 {
-  "pages": [
-    "pages/home/home",
-    "pages/order/order",
-    "pages/myself/myself",
-    "pages/index/index",
-    "pages/accounts/accounts"
-  ],
-  "tabBar": {
-    "selectedColor": "#FF0000",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath":"./images/home1.png",
-        "selectedIconPath": "./images/home.png"
-      },
-      {
-        "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath":"./images/order1.png",
-        "selectedIconPath": "./images/order.png"
-      },
-      {
-        "pagePath": "pages/myself/myself",
-        "text": "我的",
-        "iconPath":"./images/myself1.png",
-        "selectedIconPath": "./images/myself.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "日志"
-      }
-    ]
-  },
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "pages": [
+        "pages/home/home",
+        "pages/order/order",
+        "pages/myself/myself",
+        "pages/index/index",
+        "pages/accounts/accounts",
+        "pages/adminLogin/adminLogin",
+        "pages/admin/admin"
+    ],
+    "tabBar": {
+        "selectedColor": "#FF0000",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "./images/home1.png",
+                "selectedIconPath": "./images/home.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订单",
+                "iconPath": "./images/order1.png",
+                "selectedIconPath": "./images/order.png"
+            },
+            {
+                "pagePath": "pages/myself/myself",
+                "text": "我的",
+                "iconPath": "./images/myself1.png",
+                "selectedIconPath": "./images/myself.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "日志"
+            }
+        ]
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
 }

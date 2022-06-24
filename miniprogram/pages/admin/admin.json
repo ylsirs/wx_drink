@@ -2,7 +2,7 @@
   "component": true,
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "我的订单",
+  "navigationBarTitleText": "提交订单",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",
   "navigationStyle": "default"

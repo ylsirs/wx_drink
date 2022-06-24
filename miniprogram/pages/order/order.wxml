@@ -1,1 +1,22 @@
-<view>订单111111111</view>
+<view class="container">
+  <block wx:if="{{!isLogin}}">
+    <view class="nIsLogin">请登录后查看</view>
+  </block>
+  <block wx:if="{{isLogin}}">
+    <view class="yIsLogin">
+      <view class="order_list" wx:for="{{orders}}" wx:key="index">
+        <view class="order_list_goods" wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
+            {{goodsItem.name}}
+            {{goodsItem.price}}
+          <view class="order_list_goods_detail">
+            {{goodsItem.detail.size}}
+            {{goodsItem.detail.sweet}}
+            {{goodsItem.detail.temperature}}
+          </view>
+        </view>
+        <view class="order_list">{{item.notesContent}}</view>
+        <view class="order_list_price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </block>
+</view>

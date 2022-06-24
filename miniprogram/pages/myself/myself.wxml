@@ -23,7 +23,10 @@
       <view class="user_info">
         <view>个人资料</view>
         <view>我的留言</view>
-        <view wx:if="{{hasUserInfo}}" bind:tap="loginOut">退出登录</view>
+        <view bind:tap="adminLogin">管理员登录</view>
+      </view>
+      <view class="loginOut" wx:if="{{hasUserInfo}}" bind:tap="loginOut">
+        <button type="primary" size="mini">退出登录</button>
       </view>
     </view>
   </view>

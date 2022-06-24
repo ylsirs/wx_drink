@@ -8,8 +8,14 @@
             "list": [
                 {
                     "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide",
-                    "query": ""
+                    "pathName": "pages/admin/admin",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
                 },
                 {
                     "name": "pages/getOpenId/index",

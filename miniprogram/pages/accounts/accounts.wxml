@@ -6,7 +6,7 @@
       <text>订单详情</text>
     </view>
     <view class="order_list">
-      <view class="order_list_goods" wx:for="{{cartGoodsList}}">
+      <view class="order_list_goods" wx:for="{{cartGoodsList}}" wx:key="index">
         <view class="order_list_goods_name">
           <view>{{item.name + '/' + item.detail.size + '杯'}}</view>
           <view>{{item.detail.sweet + '/' + item.detail.temperature}}</view>
