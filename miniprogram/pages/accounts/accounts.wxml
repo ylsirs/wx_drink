@@ -3,7 +3,8 @@
   <!-- 订单详情 -->
   <view class="order">
     <view class="order_title">
-      <text>订单详情</text>
+      <text>{{TABLE_NUM}}</text>
+      <text>订单</text>
     </view>
     <view class="order_list">
       <view class="order_list_goods" wx:for="{{cartGoodsList}}" wx:key="index">

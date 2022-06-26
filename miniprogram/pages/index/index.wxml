@@ -146,9 +146,7 @@
             <text>￥{{item.price}}</text>
           </view>
           <view class="cart_goods_list_list_num">
-            <text bindtap="cartGoodsListNumtDelete" data-item="{{item}}" data-index="{{index}}">
-              -
-            </text>
+            <text bindtap="cartGoodsListNumtDelete" data-item="{{item}}" data-index="{{index}}"> - </text>
             <text>{{item.goodsNum}}</text>
             <text bindtap="cartGoodsListNumAdd" data-item="{{item}}" data-index="{{index}}">+</text>
           </view>

@@ -28,10 +28,6 @@
                 "text": "我的",
                 "iconPath": "./images/myself1.png",
                 "selectedIconPath": "./images/myself.png"
-            },
-            {
-                "pagePath": "pages/index/index",
-                "text": "日志"
             }
         ]
     },

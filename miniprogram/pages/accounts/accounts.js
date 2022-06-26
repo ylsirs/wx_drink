@@ -8,8 +8,11 @@ Page({
         cartTotalPrice: '',
         cartTotalNum: '',
         notesValueLength: 0,
+        TABLE_NUM: ''
     },
     onLoad (options) {
+        let TABLE_NUM = wx.getStorageSync('TABLE_NUM')
+        console.log(TABLE_NUM);
         let cartGoodsList = JSON.parse(options.cartList)
         let cartTotalNum = 0
         let cartTotalPrice = 0
@@ -21,7 +24,8 @@ Page({
         this.setData({
             cartGoodsList: cartGoodsList,
             cartTotalPrice: cartTotalPrice,
-            cartTotalNum: cartTotalNum
+            cartTotalNum: cartTotalNum,
+            TABLE_NUM: TABLE_NUM
         })
     },
 
@@ -44,9 +48,10 @@ Page({
         accountsContent.price = this.data.cartTotalPrice
         accountsContent.notesContent = notesContent
         accountsContent.goodsList = this.data.cartGoodsList
+        accountsContent.TABLE_NUM = this.data.TABLE_NUM
         accountsContent.time = util.formatTime(new Date())
         let data = wx.getStorageSync('userInfo')
-        // console.log(data, accountsContent);
+        console.log(accountsContent);
         // 下单  调用云函数"addOrder"
         if (data) {
             if (flag) {
@@ -68,13 +73,14 @@ Page({
                                 flag = !flag
                             }
                         })
+                        wx.removeStorageSync('TABLE_NUM')
                     },
                     fail: console.error
                 })
             }
             // 返回点餐页
-            wx.reLaunch({
-                url: `../index/index`
+            wx.switchTab({
+                url: '../home/home'
             })
         } else {
             wx.showToast({

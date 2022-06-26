@@ -1,3 +1,4 @@
 <view>
-  <button type="primary" size="">扫码点餐</button>
+  <button type="primary" class="s_m_Btn" bindtap="saoma" 	disabled="{{isLogin}}">扫码点餐</button>
+  <button type="primary" class="go_login" bindtap="goLogin" wx:if="{{isLogin}}">去登陆</button>
 </view>

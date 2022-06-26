@@ -41,6 +41,9 @@ Page({
   },
 
   onLoad: function (options) {
+    // 储存桌号
+    wx.setStorageSync('TABLE_NUM', options.TABLE_NUM)
+    
     db.collection("photo").get({
       success: res => {
         // console.log(res);
@@ -130,7 +133,6 @@ Page({
 
   // 搜索框跳转事件
   goSearch (e) {
-    console.log(e);
   },
 
 
@@ -147,7 +149,6 @@ Page({
     if (navBarHeightFlag) {
       // 适配分辨率高度小于850像素的屏幕
       let goodsScrollHeight = app.globalData.winHeight - app.globalData.navBarHeight
-      // console.log(app.globalData.navBarHeight);
       // 适配分辨率高度大于850像素的屏幕
       if (app.globalData.winHeight >= 850) {
         goodsScrollHeight = goodsScrollHeight - (app.globalData.winHeight - 850)
@@ -162,8 +163,7 @@ Page({
       })
       navBarHeightFlag = !navBarHeightFlag
     }
-    // console.log(heightArr);
-    // console.log(e.detail.scrollTop);
+
     if (e.detail.scrollTop <= 30) {
       this.setData({
         // 隐藏搜索框  显示轮播和公告
@@ -241,12 +241,7 @@ Page({
     obj.price = this.data.cartPirce
     obj.goodsNum = 1
     obj.detail = this.data.cartGoodsDetail
-    // obj._id = 
-    // console.log(this.data);
-
     this.data.cartGoodsList.push(obj)
-    // console.log(this.data.cartGoodsList);
-    // console.log(this.data.cartGoodsDetail);
     this.setData({
       cartGoodsList: this.data.cartGoodsList,
       cartShow: false
@@ -331,11 +326,7 @@ Page({
   },
 
   goAccounts () {
-    console.log(this.data.cartGoodsList);
     let cart = JSON.stringify(this.data.cartGoodsList)
-    // this.setData({
-    //   cartGoodsList: []
-    // })
     wx.navigateTo({
       url: `../accounts/accounts?cartList=${cart}`,
     })
