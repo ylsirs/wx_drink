@@ -38,7 +38,7 @@ Page({
           },
           success: (resLogin) => {
             const { result: { data } } = resLogin
-            console.log(data);
+            // console.log(data);
             this.setData({
               userInfo: data,
               hasUserInfo: true
@@ -51,7 +51,7 @@ Page({
   },
 
   loginOut () {
-    console.log('退出登录');
+    // console.log('退出登录');
     wx.clearStorageSync()
     this.setData({
       hasUserInfo: false

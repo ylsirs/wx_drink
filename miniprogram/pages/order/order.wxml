@@ -6,15 +6,14 @@
     <view class="yIsLogin">
       <view class="order_list" wx:for="{{orders}}" wx:key="index">
         <view class="order_list_goods" wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
-            {{goodsItem.name}}
-            {{goodsItem.price}}
+          <text>{{goodsItem.name}}/{{goodsItem.detail.size + '杯'}}</text>
+          <text>{{goodsItem.price}}</text>
           <view class="order_list_goods_detail">
-            {{goodsItem.detail.size}}
-            {{goodsItem.detail.sweet}}
-            {{goodsItem.detail.temperature}}
+            <text>{{goodsItem.detail.sweet}}/{{goodsItem.detail.temperature}}</text>
           </view>
         </view>
-        <view class="order_list">{{item.notesContent}}</view>
+        <view class="order_list">备注：{{item.notesContent}}</view>
+        <view class="order_list">{{item.time}}</view>
         <view class="order_list_price">￥{{item.price}}</view>
       </view>
     </view>

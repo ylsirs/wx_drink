@@ -11,13 +11,11 @@ App({
     }
     // 胶囊按钮位置信息
     const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
-    // console.log(menuButtonInfo);
     wx.getSystemInfo({
       success: (res) => {
         // console.log(res);
         this.globalData.winWidth = res.screenWidth;
         this.globalData.winHeight = res.screenHeight;
-        // console.log(res.statusBarHeight);
         // 导航栏高度 = 状态栏高度 + 44
         this.globalData.navBarHeight = res.statusBarHeight + 44;
         this.globalData.menuRight = res.screenWidth - menuButtonInfo.right;

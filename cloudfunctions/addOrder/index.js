@@ -20,6 +20,16 @@ exports.main = async (event, context) => {
         }
     })
 
+    db.collection('orderList').add({
+        data: {
+            opendID: wxContext.OPENID,
+            order: accountsContent,
+            table: 0,
+            complete: false,
+            _time: +new Date()
+        }
+    })
+    
     return {
         openId: wxContext.OPENID,
     }

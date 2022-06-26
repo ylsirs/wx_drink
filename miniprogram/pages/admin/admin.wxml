@@ -1,2 +1,35 @@
-<!--pages/admin/admin.wxml-->
-<text>pages/admin/admin.wxml</text>
+<!-- pages/admin/admin.wxml -->
+<!-- <view class="container"> -->
+<view class="nav" style="height:{{navHeight}}px">
+  <view class="nav_title" style="top:{{menuTop}}px">订单后台管理</view>
+</view>
+<view class="ordersList" style="padding-top: {{navHeight}}px">
+  <view wx:for="{{tabbarState? incompleteOrderList : completeOrderList}}" wx:key="_id" class="order">
+    <view wx:for="{{item.order.goodsList}}" wx:key="index" wx:for-item="goodsItem" class="order_goods">
+      <text>{{goodsItem.name}}/ {{goodsItem.detail.size + '杯'}}</text>
+      <text>{{goodsItem.detail.sweet + '/' + goodsItem.detail.temperature}}</text>
+      <text>×{{goodsItem.goodsNum}}</text>
+    </view>
+    <text class="order_notes">备注：{{item.order.notesContent}}</text>
+    <text class="order_time">{{item.order.time}}</text>
+    <text class="order_state" bind:tap="orderState" data-_id="{{item._id}}"  wx:if="{{!tabbarState}}">完成</text>
+    <text class="order_state_1 order_state" wx:else>已完成</text>
+    <!-- <text>{{item.table}}</text>  {{item.complete}} -->
+  </view>
+</view>
+
+
+<view class="tabbar">
+  <view bind:tap="inCompleteOrder">
+    <image src="../../images/order-incomplete0.png" wx:if="{{tabbarState}}" />
+    <image src="../../images/order-incomplete1.png" wx:else />
+    <text class="{{tabbarState === false? 'tabbarActive':'' }}">待完成</text>
+  </view>
+  <view bind:tap="completeOrder">
+    <image src="../../images/order-complete1.png" wx:if="{{tabbarState}}" />
+    <image src="../../images/order-complete0.png" wx:else />
+    <text class="{{tabbarState === false? '':'tabbarActive' }} ">已完成</text>
+  </view>
+</view>
+
+<view class="space"></view>

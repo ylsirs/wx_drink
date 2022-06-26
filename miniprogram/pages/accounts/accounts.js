@@ -1,6 +1,7 @@
 let notesContent = ''
 // 节流阀
 let flag = true
+const util = require('../../utils/util.js')
 Page({
     data: {
         cartGoodsList: '',
@@ -43,10 +44,9 @@ Page({
         accountsContent.price = this.data.cartTotalPrice
         accountsContent.notesContent = notesContent
         accountsContent.goodsList = this.data.cartGoodsList
-        console.log(accountsContent);
-
+        accountsContent.time = util.formatTime(new Date())
         let data = wx.getStorageSync('userInfo')
-        console.log(data);
+        // console.log(data, accountsContent);
         // 下单  调用云函数"addOrder"
         if (data) {
             if (flag) {
@@ -59,20 +59,21 @@ Page({
                     },
                     success (res) {
                         // 下单成功，数据库已更新
-                        console.log(res);
+                        // console.log(res);
                         wx.showToast({
                             title: '下单成功',
                             icon: 'success',
                             duration: 2000,
                             success () {
-                                flag = !flag 
+                                flag = !flag
                             }
                         })
-                    }
+                    },
+                    fail: console.error
                 })
             }
             // 返回点餐页
-            wx.redirectTo({
+            wx.reLaunch({
                 url: `../index/index`
             })
         } else {
