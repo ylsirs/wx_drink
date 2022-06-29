@@ -12,6 +12,7 @@ page {
   padding-top: 100px;
   font-size: 20px;
   height: 100%;
+  padding: 10px;
 }
 
 .order_list {
@@ -21,4 +22,42 @@ page {
   padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+
+.order_list_goods {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.order_list_goods_info{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.order_list_goods_detail {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.order_list_bottom{
+  display: flex ;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.order_list_bottom view:nth-child(1) {
+  font-weight: lighter;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.order_list_triangle {
+  width: 0;
+  height: 0;
+  border: 6px solid #fff;
+  border-left-color: #000;
 }

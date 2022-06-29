@@ -43,7 +43,7 @@ Page({
   onLoad: function (options) {
     // 储存桌号
     wx.setStorageSync('TABLE_NUM', options.TABLE_NUM)
-    
+
     db.collection("photo").get({
       success: res => {
         // console.log(res);
@@ -133,6 +133,9 @@ Page({
 
   // 搜索框跳转事件
   goSearch (e) {
+    wx.navigateTo({
+      url: '../searchGoods/searchGoods'
+    })
   },
 
 

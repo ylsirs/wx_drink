@@ -1,21 +1,21 @@
 <view class="container">
-  <block wx:if="{{!isLogin}}">
-    <view class="nIsLogin">请登录后查看</view>
-  </block>
-  <block wx:if="{{isLogin}}">
-    <view class="yIsLogin">
-      <view class="order_list" wx:for="{{orders}}" wx:key="index">
-        <view class="order_list_goods" wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
+  <view class="nIsLogin" wx:if="{{!isLogin}}">请登录后查看</view>
+  <view class="yIsLogin" wx:if="{{isLogin}}">
+    <view class="order_list" wx:for="{{orders}}" wx:key="index">
+      <view class="order_list_goods" wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
+        <view class="order_list_goods_info">
           <text>{{goodsItem.name}}/{{goodsItem.detail.size + '杯'}}</text>
-          <text>{{goodsItem.price}}</text>
-          <view class="order_list_goods_detail">
-            <text>{{goodsItem.detail.sweet}}/{{goodsItem.detail.temperature}}</text>
-          </view>
+          <text>×{{goodsItem.goodsNum}}</text>
+          <text>￥{{goodsItem.price}}</text>
         </view>
-        <view class="order_list">备注：{{item.notesContent}}</view>
-        <view class="order_list">{{item.time}}</view>
-        <view class="order_list_price">￥{{item.price}}</view>
+        <view class="order_list_goods_detail">
+          <text>{{goodsItem.detail.sweet}}/{{goodsItem.detail.temperature}}</text>
+        </view>
+      </view>
+      <view class="order_list_bottom">
+        <view class="order_list_time">{{item.time}}</view>
+        <view class="order_list_price">总计￥{{item.price}}</view>
       </view>
     </view>
-  </block>
+  </view>
 </view>

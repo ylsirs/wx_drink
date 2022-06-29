@@ -18,9 +18,10 @@
                     }
                 },
                 {
-                    "name": "pages/getOpenId/index",
-                    "pathName": "pages/getOpenId/index",
-                    "query": "",
+                    "name": "点单页面",
+                    "pathName": "pages/index/index",
+                    "query": "TABLE_NUM=1%E5%8F%B7%E6%A1%8C",
+                    "launchMode": "default",
                     "scene": null
                 },
                 {

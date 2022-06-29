@@ -1,0 +1,31 @@
+page{
+  background-color: #f0f0f0;
+}
+
+/* 搜索栏 */
+.searchTop{
+  display: flex;
+}
+
+.search_top_back{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.search_top_search {
+  border: 1px solid #DCDCDC;
+  border-radius: 15px;
+  height: 30px;
+  width: 150px;
+  margin-left: 20px;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.search_top_img {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 68px;
+}

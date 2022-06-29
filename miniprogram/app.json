@@ -6,7 +6,8 @@
         "pages/index/index",
         "pages/accounts/accounts",
         "pages/adminLogin/adminLogin",
-        "pages/admin/admin"
+        "pages/admin/admin",
+        "pages/searchGoods/searchGoods"
     ],
     "tabBar": {
         "selectedColor": "#FF0000",
