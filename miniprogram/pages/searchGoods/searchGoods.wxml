@@ -3,6 +3,6 @@
   <view class="searchTop">
     <image src="../../images/back.png" class="search_top_back" bindtap="backTo"   style="margin-top:{{menuTop}}px"/>
     <image src="../../images/serach.png" class="search_top_img" style="top:{{menuTop + 6}}px" />
-    <input type="text" placeholder="搜索商品" class="search_top_search" style="margin-top:{{menuTop}}px" bindtap="goSearch" />
+    <input type="text" placeholder="搜索商品" class="search_top_search" style="margin-top:{{menuTop}}px" bindtap="goSearch" 	bindconfirm="searchGoods"/>
   </view>
 </view>
