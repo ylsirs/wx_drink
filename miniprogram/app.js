@@ -13,7 +13,7 @@ App({
     const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
     wx.getSystemInfo({
       success: (res) => {
-        // console.log(res);
+        console.log(res, menuButtonInfo);
         this.globalData.winWidth = res.screenWidth;
         this.globalData.winHeight = res.screenHeight;
         // 导航栏高度 = 状态栏高度 + 44

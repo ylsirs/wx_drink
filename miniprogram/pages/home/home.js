@@ -15,7 +15,7 @@ Page({
         }
     },
     saoma() {
-        // res.rawData  二维码源码
+        // res.rawData  二维码原始数据，base64编码
         // "MeWPt+ahjA=="
         // "MuWPt+ahjA=="
         // "M+WPt+ahjA=="
