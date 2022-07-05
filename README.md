@@ -18,4 +18,8 @@
 
 
 
-![1号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\1号桌.png)![2号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\2号桌.png)![3号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\3号桌.png)
+https://raw.githubusercontent.com/ylsirs/wx_drink/master/miniprogram/images/QR%20code/one.png
+
+https://github.com/ylsirs/wx_drink/blob/master/miniprogram/images/QR%20code/two.png
+
+https://github.com/ylsirs/wx_drink/blob/master/miniprogram/images/QR%20code/three.png
