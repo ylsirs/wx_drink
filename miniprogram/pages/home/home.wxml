@@ -1,4 +1,18 @@
-<view>
+<view class="container">
   <button type="primary" class="s_m_Btn" bindtap="saoma" 	disabled="{{isLogin}}">扫码点餐</button>
   <button type="primary" class="go_login" bindtap="goLogin" wx:if="{{isLogin}}">去登陆</button>
+  <view class="tableNum">
+      <view>
+        <image src="../../images/QR code/one.png"/>
+        <text>一号桌码</text>
+      </view>
+      <view>
+        <image src="../../images/QR code/two.png"/>
+        <text>二号桌码</text>
+      </view>
+      <view>
+        <image src="../../images/QR code/three.png"/>
+        <text>三号桌码</text>
+      </view>
+  </view>
 </view>

@@ -244,7 +244,24 @@ Page({
     obj.price = this.data.cartPirce
     obj.goodsNum = 1
     obj.detail = this.data.cartGoodsDetail
-    this.data.cartGoodsList.push(obj)
+    console.log(obj);
+
+    if (this.data.cartGoodsList.length !== 0) {
+      let res = this.data.cartGoodsList.some(item => {
+        if (item.name === obj.name) {
+          if (JSON.stringify(item.detail) === JSON.stringify(obj.detail)) {
+            item.goodsNum += 1
+            return true
+          }
+        }
+      })
+      if (!res) {
+        this.data.cartGoodsList.push(obj)
+      }
+    } else {
+      this.data.cartGoodsList.push(obj)
+    }
+    console.log(this.data.cartGoodsList);
     this.setData({
       cartGoodsList: this.data.cartGoodsList,
       cartShow: false
@@ -252,6 +269,14 @@ Page({
     // 计算总价
     this.totalPrice()
   },
+
+  // console.log(this.data.cartGoodsList);
+
+
+
+
+
+
 
 
 
@@ -311,6 +336,7 @@ Page({
     })
     this.totalPrice()
     wx.createSelectorQuery().select('.cart_goods').boundingClientRect(res => {
+      if (!res) return
       if (res.height <= 490) {
         this.setData({
           cartGoodsListScroll: ''

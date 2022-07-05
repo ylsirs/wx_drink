@@ -16,12 +16,8 @@
 
 附：餐厅桌号（依次为一号桌 、二号卓、三号卓）
 
-![1号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\1号桌.png)
+![1号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\QR code\1号桌.png)
 
+![2号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\QR code\2号桌.png)
 
-
-![2号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\2号桌.png)
-
-
-
-![3号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\3号桌.png)
+![3号桌](C:\Users\y1105\Desktop\web\9 微信小程序\4.云开发\project-one\QR code\3号桌.png)
